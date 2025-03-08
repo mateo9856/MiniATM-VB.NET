@@ -1,4 +1,4 @@
-Imports System
+Imports MiniATM.ConsoleUI
 Imports MiniATM.Lib
 
 Module StartConsole
@@ -10,14 +10,25 @@ Module StartConsole
         Console.WriteLine("Create new Account, Customer and assign Card")
         Dim clientGenerator As New FakeClientGenerator(cardGenerator)
 
+        Dim pinTryCounter As Integer = 0
         Console.WriteLine("Enter your Pin...")
-        Dim pinPrompt = Console.ReadLine()
 
-        If Not (PasswordTools.VerifyPassword(pinPrompt, cardGenerator.Pin)) Then
-            Console.WriteLine("Pin is incorrect, program stopped.")
-        End If
+        While True
+            Dim pinPrompt = Console.ReadLine()
+            If (PasswordTools.VerifyPassword(pinPrompt, cardGenerator.Pin)) Then
+                Console.WriteLine("Logged, rest of logic comming soon...")
+                Exit While
+            ElseIf pinTryCounter > 3 Then
+                Console.WriteLine("You have exceeded the number Of attempts, close app...")
+                Environment.Exit(-1)
+            Else
+                Console.WriteLine("Invalid Pin, try again")
+                pinTryCounter += 1
+            End If
+        End While
 
-        Console.WriteLine("Logged, rest of logic comming soon...")
+        Dim appMenu = New ATMMenu(clientGenerator.GetClient())
+        appMenu.Run()
 
     End Sub
 End Module

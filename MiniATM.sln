@@ -1,11 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.12.35707.178 d17.12
+VisualStudioVersion = 17.12.35707.178
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "MiniATM", "MiniATM\MiniATM.vbproj", "{52604326-C69B-497E-AC91-36AB89093A52}"
 EndProject
 Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "MiniATM.Lib", "MiniATM.Lib\MiniATM.Lib.vbproj", "{D3122306-16B3-49A2-A958-4B307771BC47}"
+EndProject
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "MiniATM.ConsoleUI", "MiniATM.ConsoleUI\MiniATM.ConsoleUI.vbproj", "{5CE9655A-3B78-44A8-9455-F56D65331287}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{D3122306-16B3-49A2-A958-4B307771BC47}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D3122306-16B3-49A2-A958-4B307771BC47}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D3122306-16B3-49A2-A958-4B307771BC47}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5CE9655A-3B78-44A8-9455-F56D65331287}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5CE9655A-3B78-44A8-9455-F56D65331287}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5CE9655A-3B78-44A8-9455-F56D65331287}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5CE9655A-3B78-44A8-9455-F56D65331287}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

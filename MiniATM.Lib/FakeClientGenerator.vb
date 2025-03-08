@@ -27,6 +27,10 @@
         UserAccount.CardInfo.Pin = cardInfo.Pin
     End Sub
 
+    Function GetClient() As Account
+        Return UserAccount
+    End Function
+
     Function GetCustomerData() As (Name As String, Surname As String, Address As String)
         Return (PredictName(), PredictSurname(), PredictAddress())
     End Function

@@ -1,13 +1,11 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <OutputType>Exe</OutputType>
-    <RootNamespace>MiniATM</RootNamespace>
+    <RootNamespace>MiniATM.ConsoleUI</RootNamespace>
     <TargetFramework>net8.0</TargetFramework>
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\MiniATM.ConsoleUI\MiniATM.ConsoleUI.vbproj" />
     <ProjectReference Include="..\MiniATM.Lib\MiniATM.Lib.vbproj" />
   </ItemGroup>
 
