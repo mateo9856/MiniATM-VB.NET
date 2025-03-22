@@ -16,7 +16,6 @@ Module StartConsole
         While True
             Dim pinPrompt = Console.ReadLine()
             If (PasswordTools.VerifyPassword(pinPrompt, cardGenerator.Pin)) Then
-                Console.WriteLine("Logged, rest of logic comming soon...")
                 Exit While
             ElseIf pinTryCounter > 3 Then
                 Console.WriteLine("You have exceeded the number Of attempts, close app...")
@@ -27,7 +26,9 @@ Module StartConsole
             End If
         End While
 
-        Dim appMenu = New ATMMenu(clientGenerator.GetClient())
+        Dim clientData = clientGenerator.GetClient()
+        Dim appMenu = New ATMMenu(clientData)
+        Console.WriteLine("Logged! Hello {0}!", clientData.Customer.Name)
         appMenu.Run()
 
     End Sub

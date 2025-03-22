@@ -5,8 +5,12 @@ Public Class ATMMenu
     Private _account As Account
     Private _continueOptions As Boolean = False
 
+    Private _cashHandout As CashHandout
+    Private _cashPayment As CashPayment
     Public Sub New(account As Account)
         _account = account
+        _cashHandout = New CashHandout(_account)
+        _cashPayment = New CashPayment(_account)
     End Sub
 
     Public Sub Run()
@@ -24,9 +28,19 @@ Public Class ATMMenu
                 Case "1"
                     ' Cash handout
                     Console.WriteLine("Cash handout")
+                    _cashHandout.HandoutView()
+                    Console.WriteLine($"Type to continue...")
+                    Console.ReadLine()
+
+                    _continueOptions = True
                 Case "2"
                     ' Cash payment
                     Console.WriteLine("Cash payment")
+                    _cashPayment.PaymentView()
+                    Console.WriteLine($"Type to continue...")
+                    Console.ReadLine()
+
+                    _continueOptions = True
                 Case "3"
                     ' Account balance
                     Dim balance = _account.GetActualBalance()
